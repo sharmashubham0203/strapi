@@ -65,14 +65,16 @@
 
 module.exports = ({ env }) => ({
   connection: {
-    client: 'postgres', // Use ":" instead of "=" for key-value pairs
+    client: 'postgres',
     connection: {
       host: env('DATABASE_HOST'),
-      port: env.int('DATABASE_PORT'),
+      port: env.int('DATABASE_PORT', 5432), // Default to 5432 if DATABASE_PORT is not provided
       database: env('DATABASE_NAME'),
       user: env('DATABASE_USERNAME'),
       password: env('DATABASE_PASSWORD'),
-      ssl: env.bool('DATABASE_SSL', true),
+      ssl: env.bool('DATABASE_SSL', true) && {
+        rejectUnauthorized: env.bool('DATABASE_SSL_REJECT_UNAUTHORIZED', false), // Disable strict SSL checks by default
+      },
     },
   },
 });
