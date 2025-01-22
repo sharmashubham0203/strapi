@@ -1,13 +1,17 @@
 const path = require('path');
 
 module.exports = ({ env }) => {
-  const client = env('DATABASE_CLIENT', 'sqlite');
+  // const client = env('DATABASE_CLIENT', 'sqlite');
 
-  const connections = {
-    // mysql: {
-    //   connection: {
-    //     host: env('DATABASE_HOST', 'localhost'),
-    //     port: env.int('DATABASE_PORT', 3306),
+  // const connections = {
+  //   // mysql: {
+  //   //   connection: {
+  //   //     host: env('DATABASE_HOST', 'localhost'),
+  //   //     port: env.int('DATABASE_Pconst client = env('DATABASE_CLIENT', 'sqlite');
+
+  // const connections = {
+  //   // mysql: {
+  //   //   connection: {ORT', 3306),
     //     database: env('DATABASE_NAME', 'strapi'),
     //     user: env('DATABASE_USERNAME', 'strapi'),
     //     password: env('DATABASE_PASSWORD', 'strapi'),
